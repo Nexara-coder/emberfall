@@ -1,0 +1,449 @@
+================================================================================
+  EMBERFALL
+  An original browser MMORPG in the spirit of the 2005-2007 RuneScape 2 era
+================================================================================
+
+  Everything here is original work. No assets, cache data, maps, quests,
+  dialogue, names, music or source code from any other game are included. The
+  resemblance is to the era's design philosophy: an elevated third-person
+  camera, click-to-move, a 28-slot pack, a right-hand tab panel, and 23 skills
+  you grind one at a time.
+
+
+--------------------------------------------------------------------------------
+1. INSTALLING IT
+--------------------------------------------------------------------------------
+
+  1. Unzip the archive.
+  2. Upload the CONTENTS of the folder (index.html, api/, js/, css/, data/,
+     health.php and the rest) to your web host's public folder - usually
+     public_html or www. Keep the folder structure exactly as it is.
+  3. Make sure data/store is writable by the web server. 755 works on most
+     hosts; some strict ones need 777.
+  4. Visit https://yourdomain.com/health.php
+
+     That page runs a full environment check and tells you in plain language
+     what, if anything, needs changing. When it says "Everything checks out",
+     click through to the game.
+
+  5. Visit https://yourdomain.com/ and create an account.
+
+  Requirements: PHP 8.0 or newer, and that is genuinely all. No SSH, no
+  composer, no Node, no build step, no cron job, no database to provision, no
+  batch file, no local server. PDO SQLite is used if present; if it is not, the
+  game falls back to a locked JSON file and still works.
+
+  Multiplayer needs nothing extra. Two people opening the same URL are in the
+  same world.
+
+
+--------------------------------------------------------------------------------
+1b. IF SOMETHING GOES WRONG
+--------------------------------------------------------------------------------
+
+  Two URLs will tell you almost everything:
+
+      https://yourdomain.com/health.php
+      https://yourdomain.com/api/index.php?a=ping
+
+  The second should print a single line of JSON naming your PHP version and
+  storage backend. If it prints HTML, an error page, or nothing at all, that is
+  your problem - not the game code.
+
+  "Unexpected token" or "The server returned a 500 error"
+      Your Apache does not like the optional .htaccess file. Delete BOTH
+      .htaccess and data/store/.htaccess and reload. The game does not need
+      them; they only add compression and block web access to the save file.
+
+  "Could not be loaded (HTTP 403)"
+      Your host blocks direct web access to the data folder. This no longer
+      matters - the game fetches its world through PHP instead, and only falls
+      back to the raw files if PHP cannot serve them. If you still see this,
+      re-upload the data folder with files at 644 and folders at 755.
+
+  "Could not be loaded (HTTP 404)"
+      Upload the CONTENTS of the zip, not the folder itself. index.html must
+      sit directly in public_html, with api/, js/, css/ and data/ beside it.
+
+  "Did not contain game data"
+      Your FTP client corrupted a .json file. Re-upload the data folder in
+      BINARY mode, not ASCII/auto.
+
+  "The server sent an empty reply"
+      Your host is probably running PHP 7. Switch to PHP 8 in cPanel under
+      "Select PHP Version".
+
+  Characters will not save
+      data/store is not writable. Set it to 755, or 777 on stricter hosts.
+
+  Nothing renders, black viewport
+      Your browser or graphics driver has WebGL disabled. Check
+      https://get.webgl.org/
+
+
+--------------------------------------------------------------------------------
+2. PLAYING IT
+--------------------------------------------------------------------------------
+
+  Left-click the ground to walk. Left-click anything else to do the obvious
+  thing with it: chop a tree, mine a rock, talk to a villager, attack a goblin.
+  Right-click for the full menu.
+
+  Mouse wheel           zoom
+  Right-drag (or shift-drag)  orbit and pitch the camera
+  Q / E                 rotate the camera
+  Click the minimap     walk there
+  Click the run orb     toggle running (costs energy, regenerates with Agility)
+  Click the compass     face north
+  Enter                 jump to the chat box
+  1-0                   switch side panel tabs
+  Escape                close windows
+
+  On a phone: one finger taps to move and interact, two fingers orbit and pinch
+  to zoom.
+
+  Chat commands:
+      /tell <name> <message>     send a private message
+
+  Your character is saved on the server continuously. Close the tab and come
+  back whenever you like.
+
+
+--------------------------------------------------------------------------------
+3. WHAT IS IN THE WORLD
+--------------------------------------------------------------------------------
+
+  A 384 x 384 tile continent, roughly 78% land, with six connected regions
+  joined by roads, a river and three bridges:
+
+      Oakheart Vale      starting village - bank, general store, smithy,
+                         chapel, inn, farms, beginner forest, beginner mine,
+                         fishing coast, goblin territory
+      Aldermere          the city - keep, market hall, armoury, weapon shop,
+                         magic shop, archive, bank, guard house
+      Kragmar Peaks      northern mountains, deep mines and the dwarven
+                         settlement of Dunhollow
+      Mirefen            western swamp, ruins and the things living in them
+      Saltbrook Coast    southern harbour town, fishmonger, docks, islands
+      The Blightlands    eastern danger - Blightfort, the Warden's Hall,
+                         dungeon entrances
+
+  By the numbers:
+
+      387 items          with icons, values, bonuses and level requirements
+       66 NPC types      36 named townsfolk, 30 monsters including 4 bosses
+      348 spawns         placed around the map
+       23 quests         101 authored stages
+       46 buildings      enterable, with collision and fading roofs
+     1315 world objects  trees, rocks, fishing spots, herbs, altars, signs
+       12 shops          each with its own stock
+       18 spells         combat, alchemy and teleports
+       15 prayers
+        6 material tiers Bronze, Iron, Steel, Verdite, Kaldrite, Aetherium
+
+  Tiers, region names, monsters, quests and lore are all invented for this
+  project.
+
+
+--------------------------------------------------------------------------------
+4. THE 23 SKILLS
+--------------------------------------------------------------------------------
+
+  Attack, Strength, Defence, Hitpoints, Ranged, Prayer, Magic, Mining,
+  Smithing, Fishing, Cooking, Woodcutting, Firemaking, Crafting, Fletching,
+  Runecraft, Slayer, Farming, Construction, Hunter, Agility, Herblore,
+  Thieving.
+
+  All 23 can actually be trained. The XP curve is the classic one:
+
+      XP(L) = floor( sum over x from 1 to L-1 of floor(x + 300 * 2^(x/7)) / 4 )
+
+  which gives 83 XP for level 2 and 13,034,431 for level 99. Levels stop at 99;
+  XP keeps counting to 200,000,000. Hitpoints starts at level 10, so a new
+  character is combat level 3.
+
+  Some notes on how each is trained:
+
+      Woodcutting   six tree tiers, level-gated, trees fall and respawn
+      Mining        nine ores, rocks deplete and respawn, rare gems
+      Smithing      ore -> furnace -> bar -> anvil -> item-selection menu.
+                    Ore never turns straight into equipment.
+      Fishing       four tool types, ten fish, spots along coasts and rivers
+      Cooking       range or your own fire, with a level-based burn chance
+      Firemaking    tinderbox on logs, the fire burns in the world for a while
+      Fletching     logs -> shafts, bows; bow string from flax
+      Crafting      tanning, leather, gem cutting, jewellery, pottery, glass
+      Herblore      grimy herb -> clean -> vial of water -> secondary -> potion
+      Runecraft     essence at the eight elemental altars, multiples at level
+      Farming       plant a seed, wait out a real timer, harvest
+      Hunter        bird snares in the marsh
+      Agility       a six-obstacle course with a lap bonus; raises run recovery
+      Thieving      pickpocket townsfolk, who will catch you and hit you
+      Slayer        assignments from Vex Harrowgate in Aldermere
+      Construction  camp carpentry from logs, nails and a hammer
+      Prayer        bury bones; recharge at altars
+      Magic         runes, staves, autocast, alchemy and teleports
+
+
+--------------------------------------------------------------------------------
+5. COMBAT
+--------------------------------------------------------------------------------
+
+  Three styles only: melee, ranged and magic. No abilities, no cooldown
+  rotations, no ability bar.
+
+  Weapon speeds are expressed in ticks, exactly as in the reference: a 4-tick
+  weapon swings every 2.4 seconds. Accuracy is a roll against a roll, never a
+  coin flip:
+
+      attack roll  = (effective attack + 8) * (attack bonus + 64)
+      defence roll = (effective defence + 8) * (defence bonus + 64)
+
+      if attack > defence:  chance = 1 - (defence + 2) / (2 * (attack + 1))
+      otherwise:            chance = attack / (2 * (defence + 1))
+
+      max hit = floor(0.5 + effective strength * (strength bonus + 64) / 640)
+
+  A successful hit rolls uniformly from 0 to max hit, so a zero is possible.
+  Damage awards about 4 XP in the chosen combat skill and 1.33 Hitpoints XP,
+  routed by attack style: Accurate to Attack, Aggressive to Strength,
+  Defensive to Defence, Controlled split across all three.
+
+  Combat level uses the classic formula and caps at 126.
+
+  Also implemented: auto-retaliate, weapon and armour level requirements,
+  attack range, ammunition consumption, rune consumption, food, prayers that
+  drain rather than regenerate, hitsplats, overhead HP bars, death, respawn at
+  the nearest safe town, and loot.
+
+  Seven weapon classes across six tiers, all visible in your character's hand:
+  daggers, swords, scimitars, longswords, maces, battleaxes and two-handed
+  greatswords, plus bows and staves.
+
+
+--------------------------------------------------------------------------------
+6. MULTIPLAYER
+--------------------------------------------------------------------------------
+
+  Shared hosting cannot hold websockets open, so this is HTTP - but done
+  carefully rather than naively.
+
+  - One request carries your position up and brings back nearby players, the
+    shared world state and new chat in a single round trip.
+  - The client posts about five times a second and adapts: the interval is
+    tied to the measured round-trip time, so a slow connection backs off
+    rather than piling up requests.
+  - Other players are drawn about 180ms in the past and interpolated between
+    the two snapshots either side of that moment. They walk; they do not
+    teleport between packets.
+  - Appearance and equipment are sent once and then only when they change,
+    with a checksum so the server can tell whether you already have them.
+  - Presence is one small record per player, not a single globally locked blob.
+
+  You see other players' names, combat levels, appearance, worn equipment and
+  animation. Public chat, private messages and a nearby-players list all work.
+
+  The world is genuinely shared. Monster HP, death and respawn timers, and
+  resource depletion all live on the server: two players standing beside the
+  same goblin are hitting the same goblin, and if you chop a tree down, it is
+  down for everyone until it grows back.
+
+  Trading is two-stage. Both players offer, both accept, the window moves to a
+  confirmation screen, both accept again, and only then does the server
+  re-verify that each side still holds what it offered and that there is room,
+  before moving anything. The browser never decides the outcome.
+
+
+--------------------------------------------------------------------------------
+7. SECURITY
+--------------------------------------------------------------------------------
+
+  Passwords go through password_hash() and password_verify(). Session tokens
+  are 20 random bytes from random_bytes().
+
+  Every outcome that matters is decided by PHP: XP, damage rolls, loot tables,
+  shop prices, bank contents, trade settlement, level requirements, resource
+  depletion. The browser asks to swing at a goblin; the server decides whether
+  it connected. Setting player.coins in the console does nothing, because the
+  next server response overwrites it.
+
+  Position is the one thing the client reports, because interpolated movement
+  needs it - but it is speed-checked, and a jump beyond a plausible running
+  pace is rejected and snapped back.
+
+
+--------------------------------------------------------------------------------
+7b. WHY IT LOOKS THE WAY IT DOES
+--------------------------------------------------------------------------------
+
+  Flat-shaded coloured boxes are what make a low-poly world read as toy bricks
+  rather than as a 2005 MMO. The original was not untextured: it painted stone
+  brick, wood plank, thatch and roof tile onto very simple geometry, over a
+  muted olive-and-khaki palette, under flat almost shadowless light.
+
+  So this build ships sixteen procedural textures, generated in code at load
+  (js/textures.js) and applied to:
+
+      brick     castle and stone walls
+      plank     timber walls, beams, floors, barn siding
+      thatch    hut and barn roofs
+      shingle   tiled roofs
+      bark      every tree trunk and stump
+      leaf      every canopy
+      rock      boulders, ore rocks, ruins
+      cloth     shirts, legs, boots, robes
+      grass / dirt / path / sand / snow   ground grain
+      water, metal, detail
+
+  The palette was pulled down across the board: grass from a saturated green to
+  olive, rock from pure grey to warm slate, foliage desaturated. Lighting is now
+  strong flat ambient with a weak sun, and a hard haze on the horizon, which is
+  what the era actually looked like.
+
+  Character proportions changed too: the torso tapers from proud shoulders, the
+  head is a narrower crown on a wider jaw sitting straight on the shoulders with
+  no neck, arms are thin tapered cylinders ending in deliberately oversized
+  hands, and boots are chunkier than the legs above them.
+
+  Terrain was already drawn with hard per-tile colour boundaries rather than
+  smooth blending; it now carries a grain texture over the top, with UVs mapped
+  to world position so it never swims between chunks.
+
+  textures-preview.png in this folder is a contact sheet of all sixteen,
+  rendered by the exact code that ships.
+
+
+--------------------------------------------------------------------------------
+8. PERFORMANCE
+--------------------------------------------------------------------------------
+
+  The heightmap is sampled once into typed arrays at load, so every height and
+  collision query afterwards is an array lookup rather than a noise
+  calculation. Terrain is built as 24-tile chunks within a 108-unit radius and
+  released as you walk away. Trees are drawn with instanced meshes, one batch
+  per map cell per species. Scenery and buildings are distance-culled. Item
+  icons are drawn once and cached. Nothing renders the whole continent at once.
+
+  If it runs rough, Options -> Detail drops the pixel ratio.
+
+
+--------------------------------------------------------------------------------
+9. WHAT WAS TESTED BEFORE SHIPPING
+--------------------------------------------------------------------------------
+
+  Automated, against a live PHP server, from a clean database:
+
+      PASS  JavaScript syntax, all 12 files
+      PASS  PHP syntax, all 4 files
+      PASS  XP for level 2 = 83
+      PASS  XP for level 99 = 13,034,431
+      PASS  Hitpoints starts at level 10
+      PASS  starting combat level = 3
+      PASS  exactly 28 inventory slots
+      PASS  exactly 11 equipment slots
+      PASS  23 skills tracked
+      PASS  account registration
+      PASS  duplicate name rejected
+      PASS  login, and bad passwords rejected
+      PASS  character creation
+      PASS  character save and reload
+      PASS  two accounts online simultaneously
+      PASS  remote player movement syncs
+      PASS  appearance delivered to the other client
+      PASS  shared public chat
+      PASS  private messaging
+      PASS  woodcutting yields logs and XP
+      PASS  mining yields ore
+      PASS  resource depletion shared between players
+      PASS  combat resolves attack rolls
+      PASS  monster HP tracked server-side
+      PASS  monster dies, drops loot, respawn timer shared
+      PASS  combat awards XP
+      PASS  bank deposit, withdraw 1, deposit pack, withdraw all
+      PASS  bank persists across reload
+      PASS  shop buy and sell
+      PASS  quest start and persistence
+      PASS  recipe catalogue for smelting, smithing, fletching, herblore
+      PASS  settings save and reload
+      PASS  trade: offer, two confirmations, atomic settlement
+      PASS  speed-check rejects a teleport
+      PASS  out-of-range gathering rejected
+      PASS  logout invalidates the session
+      PASS  no broken asset paths in index.html
+      PASS  no missing DOM ids or cross-module function references
+      PASS  1181 fuzzed server calls - every op with empty, out-of-range and
+            wrong-type parameters - produced no PHP error
+      PASS  every cross-reference in the game data resolves: shop stock, drop
+            tables, spawns, quest npcs and items, spell runes, every tier of
+            weapon, armour, ore, log, fish, herb, potion, gem, crop and bow
+      PASS  client boots headlessly: register, character creation, world build
+      PASS  all 10 side panel tabs render; 28 inventory slots; 23 skills
+      PASS  bank, shop and all five crafting windows populate
+      PASS  all 36 NPC dialogue trees walked, every option clicked
+      PASS  all 387 item icons draw without error
+      PASS  click-to-move pathfinds around the river to a bridge
+      PASS  chopping and mining award XP through the real client
+      PASS  full client sweep repeated after the graphics rework: no errors
+      PASS  the client starts and plays with /data/ AND ?a=gamedata both
+            returning 403, using the embedded copy in js/gamedata.js
+      PASS  a 500 response produces a plain-language message, not a parse error
+      PASS  api/index.php?a=ping reports PHP version and storage backend
+      PASS  the entire suite again on a server that returns 403 for /data/,
+            proving the game loads when the host blocks the data folder
+
+  A headless test harness was then built that runs the actual client code in a
+  DOM with Three.js stubbed, driving register, character creation, world build
+  and gameplay. It found two bugs that no amount of server testing could:
+
+    - Every window-opening path (bank, shop, and all five crafting menus)
+      threw before rendering, because the sound helper was guarded as
+      g.RFAudio but then called as a bare global. Shops and crafting lists
+      appeared empty. All audio now goes through one guarded helper.
+    - Clicking an object you were already standing next to did nothing at all.
+      The movement tick returned early when there was no path to walk, so the
+      pending interaction never fired. Chopping, mining, talking, banking and
+      shop entry all silently failed whenever you were already in range.
+
+
+
+--------------------------------------------------------------------------------
+11. FILE LAYOUT
+--------------------------------------------------------------------------------
+
+  index.html            title screen, character creation, game shell
+  health.php            hosting environment check - visit this first
+  css/style.css         stone, wood and parchment interface
+  js/gamedata.js        the whole world embedded as a script, so startup never
+                        depends on a fetch succeeding
+  js/vendor/three.min.js  Three.js r149 (MIT), vendored so there is no CDN
+  js/terrain_height.js  the deterministic definition of the continent
+  js/terrain.js         heightmap sampling, chunked meshes, collision grid
+  js/models.js          every procedural model: people, trees, buildings
+  js/path.js            A* with a binary heap and line-of-sight smoothing
+  js/world.js           places the world, handles doors and roof fading
+  js/icons.js           draws all 387 item icons onto canvases
+  js/audio.js           synthesised music, ambience and effects
+  js/net.js             API client, sync loop, interpolation buffer
+  js/entities.js        players, NPCs, monsters and their animation
+  js/ui.js              the entire interface
+  js/game.js            camera, input, the main loop
+  api/index.php         every gameplay action, authoritative
+  api/boot.php          storage, sessions, helpers
+  api/data.php          XP curve, combat maths, inventory rules
+  data/*.json           items, NPCs, shops, quests, the world, magic
+  data/store/           your players and world state live here. The save file
+                        gets an unguessable random name, recorded in
+                        dbname.php, so it stays private even on a host that
+                        ignores .htaccess.
+  tools/gen_data.js     the offline generator that produced data/*.json.
+                        Players never run this; the JSON ships in the ZIP.
+
+
+--------------------------------------------------------------------------------
+
+  Three.js is used under the MIT licence. Everything else in this project is
+  original.
+
+  Have fun. Start by talking to Elder Maren in Oakheart.
+
+================================================================================

@@ -1,0 +1,18 @@
+# Runtime save data (player accounts, sessions) - never commit
+data/store/*
+!data/store/README.txt
+!data/store/.htaccess
+
+# Godot import cache
+godot/.godot/
+
+# Godot web export output
+play/*
+!play/README.txt
+
+# Local/OS noise
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db
+.env

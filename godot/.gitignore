@@ -1,0 +1,13 @@
+# Godot's import cache. Regenerated from the .import files beside each asset.
+.godot/
+
+# NOTE: *.import files are NOT ignored, deliberately.
+#
+# Godot's own guidance is to commit them, and here they are load-bearing: they
+# carry mipmaps/generate=true for every 3D texture. Without that the engine
+# imports the ground textures with no mip chain, the materials ask for
+# linear-with-mipmaps filtering, and the sampler returns a flat constant - the
+# ground renders as a dead grey plain. Godot normally fixes this itself through
+# its "detect 3D" hook, but that only fires when a texture is first used in 3D
+# inside the editor, so the result would otherwise depend on how the project
+# happened to be opened rather than on what is in the repository.

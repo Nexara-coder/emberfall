@@ -1,0 +1,2906 @@
+{
+  "schema": 1,
+  "note": "Authored world data. Edited either by hand or in the Godot editor (Project > Emberfall Map). After editing run: node tools/apply_towns.js && node tools/apply_resources.js && node tools/bake.js && node tools/validate_world.js",
+  "townOrder": [
+    "OAKHEART",
+    "ALDERMERE",
+    "DUNHOLLOW",
+    "SALTBROOK",
+    "MIREFEN",
+    "BLIGHTFORT",
+    "OUTPOSTS"
+  ],
+  "towns": {
+    "OAKHEART": {
+      "name": "Oakheart",
+      "centre": {
+        "x": 157,
+        "z": 268
+      },
+      "radius": 36,
+      "buildings": [
+        {
+          "name": "Oakheart Bank",
+          "style": "stone",
+          "x": 151,
+          "z": 258,
+          "w": 10,
+          "d": 8,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bank_booth",
+              -2.5,
+              1.6,
+              0
+            ],
+            [
+              "bank_booth",
+              0,
+              1.6,
+              0
+            ],
+            [
+              "bank_booth",
+              2.5,
+              1.6,
+              0
+            ],
+            [
+              "crate",
+              -3.4,
+              -2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Elder's House",
+          "style": "timber",
+          "x": 160,
+          "z": 248,
+          "w": 9,
+          "d": 8,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "table",
+              0,
+              1,
+              0
+            ],
+            [
+              "chair",
+              -1.6,
+              1,
+              0
+            ],
+            [
+              "chair",
+              1.6,
+              1,
+              0
+            ],
+            [
+              "bed",
+              2.6,
+              -2.2,
+              0
+            ],
+            [
+              "shelf",
+              -3.2,
+              -2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Oakheart General Store",
+          "style": "timber",
+          "x": 140,
+          "z": 277,
+          "w": 10,
+          "d": 9,
+          "door": [
+            2,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              2.2,
+              0,
+              0
+            ],
+            [
+              "stall",
+              -2,
+              2,
+              0
+            ],
+            [
+              "crate",
+              -3,
+              -2.6,
+              0
+            ],
+            [
+              "barrel",
+              3,
+              -2.8,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Wayside Chapel",
+          "style": "stone",
+          "x": 137,
+          "z": 249,
+          "w": 9,
+          "d": 12,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "altar",
+              0,
+              -4,
+              0
+            ],
+            [
+              "pew",
+              -1.8,
+              0,
+              0
+            ],
+            [
+              "pew",
+              1.8,
+              0,
+              0
+            ],
+            [
+              "pew",
+              -1.8,
+              2.2,
+              0
+            ],
+            [
+              "pew",
+              1.8,
+              2.2,
+              0
+            ],
+            [
+              "candle",
+              0,
+              -2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Amber Hearth Inn",
+          "style": "timber",
+          "x": 160.7,
+          "z": 270,
+          "w": 10,
+          "d": 8,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              -3,
+              0,
+              0
+            ],
+            [
+              "range",
+              3.2,
+              -2.2,
+              0
+            ],
+            [
+              "table",
+              1.5,
+              1.6,
+              0
+            ],
+            [
+              "chair",
+              0.2,
+              1.6,
+              0
+            ],
+            [
+              "chair",
+              2.8,
+              1.6,
+              0
+            ],
+            [
+              "barrel",
+              -3.4,
+              -2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Oakheart Smithy",
+          "style": "stone",
+          "x": 156,
+          "z": 280,
+          "w": 11,
+          "d": 9,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "anvil",
+              -2,
+              0,
+              0
+            ],
+            [
+              "furnace",
+              3,
+              -1.5,
+              0
+            ],
+            [
+              "crate",
+              -3.6,
+              2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Cottage",
+          "style": "timber",
+          "x": 130,
+          "z": 285,
+          "w": 7,
+          "d": 7,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bed",
+              1.6,
+              -1.6,
+              0
+            ],
+            [
+              "table",
+              -1.4,
+              0.8,
+              0
+            ],
+            [
+              "chair",
+              -1.4,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Cottage",
+          "style": "timber",
+          "x": 166.5,
+          "z": 286,
+          "w": 7,
+          "d": 7,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bed",
+              -1.6,
+              -1.6,
+              0
+            ],
+            [
+              "shelf",
+              1.8,
+              -1.8,
+              0
+            ],
+            [
+              "table",
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Greenfurrow Farmhouse",
+          "style": "barn",
+          "x": 149,
+          "z": 294,
+          "w": 12,
+          "d": 9,
+          "door": [
+            2,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "table",
+              0,
+              1.2,
+              0
+            ],
+            [
+              "bed",
+              -3.4,
+              -2,
+              0
+            ],
+            [
+              "crate",
+              3.6,
+              -2.2,
+              0
+            ],
+            [
+              "spinning_wheel",
+              3.4,
+              1.6,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Barn",
+          "style": "barn",
+          "x": 166,
+          "z": 301,
+          "w": 9,
+          "d": 8,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              1.5,
+              -1.5,
+              0
+            ],
+            [
+              "crate",
+              1.5,
+              1.5,
+              0
+            ],
+            [
+              "barrel",
+              -1.5,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "props": [
+        {
+          "t": "prop",
+          "kind": "standing_stone",
+          "x": 157,
+          "z": 268
+        },
+        {
+          "t": "well",
+          "x": 153,
+          "z": 271
+        },
+        {
+          "t": "prop",
+          "kind": "statue",
+          "x": 161,
+          "z": 265
+        },
+        {
+          "t": "sign",
+          "x": 158.5,
+          "z": 262,
+          "txt": "Oakheart. Bank north. Smithy south. Road east to Aldermere."
+        },
+        {
+          "t": "sign",
+          "x": 143,
+          "z": 286,
+          "txt": "Greenfurrow Farm - mind the fences."
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 146,
+          "z": 262
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 168,
+          "z": 262
+        },
+        {
+          "t": "prop",
+          "kind": "cart",
+          "x": 167,
+          "z": 276
+        },
+        {
+          "t": "prop",
+          "kind": "crate",
+          "x": 133,
+          "z": 272
+        },
+        {
+          "t": "prop",
+          "kind": "barrel",
+          "x": 142,
+          "z": 273.5
+        },
+        {
+          "t": "prop",
+          "kind": "campfire",
+          "x": 167,
+          "z": 277
+        }
+      ],
+      "trees": [
+        {
+          "kind": "Tree",
+          "x": 143,
+          "z": 262
+        },
+        {
+          "kind": "Tree",
+          "x": 135,
+          "z": 268
+        },
+        {
+          "kind": "Tree",
+          "x": 141,
+          "z": 259
+        },
+        {
+          "kind": "Oak",
+          "x": 138,
+          "z": 262
+        },
+        {
+          "kind": "Tree",
+          "x": 144,
+          "z": 258
+        },
+        {
+          "kind": "Tree",
+          "x": 137,
+          "z": 262
+        },
+        {
+          "kind": "Oak",
+          "x": 142,
+          "z": 275
+        },
+        {
+          "kind": "Tree",
+          "x": 138,
+          "z": 276
+        },
+        {
+          "kind": "Tree",
+          "x": 150,
+          "z": 242
+        },
+        {
+          "kind": "Tree",
+          "x": 150,
+          "z": 246
+        },
+        {
+          "kind": "Oak",
+          "x": 148,
+          "z": 240
+        },
+        {
+          "kind": "Tree",
+          "x": 154,
+          "z": 242
+        },
+        {
+          "kind": "Tree",
+          "x": 172,
+          "z": 246
+        },
+        {
+          "kind": "Oak",
+          "x": 175,
+          "z": 250
+        },
+        {
+          "kind": "Tree",
+          "x": 151,
+          "z": 286
+        },
+        {
+          "kind": "Tree",
+          "x": 141,
+          "z": 286
+        }
+      ],
+      "fences": [
+        {
+          "from": [
+            146,
+            288
+          ],
+          "to": [
+            146,
+            302
+          ]
+        },
+        {
+          "from": [
+            146,
+            302
+          ],
+          "to": [
+            170,
+            302
+          ]
+        },
+        {
+          "from": [
+            170,
+            302
+          ],
+          "to": [
+            170,
+            290
+          ]
+        },
+        {
+          "from": [
+            150,
+            288
+          ],
+          "to": [
+            162,
+            288
+          ]
+        }
+      ],
+      "posts": {
+        "banker_orwen": {
+          "x": 151,
+          "z": 256.5
+        },
+        "elder_maren": {
+          "x": 160,
+          "z": 254
+        },
+        "shopkeep_bess": {
+          "x": 140,
+          "z": 279
+        },
+        "innkeep_pell": {
+          "x": 158.2,
+          "z": 270
+        },
+        "smith_dura": {
+          "x": 152.5,
+          "z": 280
+        },
+        "farmer_oswin": {
+          "x": 149,
+          "z": 290.5
+        },
+        "guard_tomas": {
+          "x": 157,
+          "z": 261
+        },
+        "fellstock": {
+          "x": 147,
+          "z": 276
+        },
+        "villager_hob": {
+          "x": 154,
+          "z": 273
+        },
+        "villager_tam": {
+          "x": 160,
+          "z": 271
+        }
+      }
+    },
+    "ALDERMERE": {
+      "name": "Aldermere",
+      "centre": {
+        "x": 250,
+        "z": 182
+      },
+      "radius": 42,
+      "buildings": [
+        {
+          "name": "Aldermere Keep",
+          "style": "castle",
+          "x": 270,
+          "z": 165,
+          "w": 18,
+          "d": 14,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "throne",
+              0,
+              -4,
+              0
+            ],
+            [
+              "table",
+              0,
+              2,
+              0
+            ],
+            [
+              "chair",
+              -2,
+              2,
+              0
+            ],
+            [
+              "chair",
+              2,
+              2,
+              0
+            ],
+            [
+              "brazier",
+              -6,
+              -3,
+              0
+            ],
+            [
+              "brazier",
+              6,
+              -3,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Guard House",
+          "style": "stone",
+          "x": 242,
+          "z": 160,
+          "w": 10,
+          "d": 8,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "table",
+              0,
+              1,
+              0
+            ],
+            [
+              "bed",
+              -2.6,
+              -1.8,
+              0
+            ],
+            [
+              "bed",
+              2.6,
+              -1.8,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Aldermere Bank",
+          "style": "stone",
+          "x": 232,
+          "z": 170,
+          "w": 12,
+          "d": 9,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bank_booth",
+              -3.5,
+              2,
+              0
+            ],
+            [
+              "bank_booth",
+              -1,
+              2,
+              0
+            ],
+            [
+              "bank_booth",
+              1.5,
+              2,
+              0
+            ],
+            [
+              "bank_booth",
+              4,
+              2,
+              0
+            ],
+            [
+              "crate",
+              -4.5,
+              -2.5,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Aldermere Archive",
+          "style": "stone",
+          "x": 286,
+          "z": 182,
+          "w": 11,
+          "d": 9,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "shelf",
+              -3,
+              -2.5,
+              0
+            ],
+            [
+              "shelf",
+              0,
+              -2.5,
+              0
+            ],
+            [
+              "shelf",
+              3,
+              -2.5,
+              0
+            ],
+            [
+              "table",
+              0,
+              1.5,
+              0
+            ],
+            [
+              "chair",
+              0,
+              2.8,
+              0
+            ],
+            [
+              "candle",
+              2,
+              1.5,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Market Hall",
+          "style": "stone",
+          "x": 250,
+          "z": 174,
+          "w": 14,
+          "d": 10,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "stall",
+              -4,
+              1,
+              0
+            ],
+            [
+              "stall",
+              0,
+              1,
+              0
+            ],
+            [
+              "stall",
+              4,
+              1,
+              0
+            ],
+            [
+              "counter",
+              0,
+              -3,
+              0
+            ],
+            [
+              "crate",
+              -5.5,
+              -3,
+              0
+            ],
+            [
+              "barrel",
+              5.5,
+              -3,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Coldiron Platemail",
+          "style": "stone",
+          "x": 232,
+          "z": 186,
+          "w": 10,
+          "d": 9,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              2.2,
+              0,
+              0
+            ],
+            [
+              "anvil",
+              -2.4,
+              -1.5,
+              0
+            ],
+            [
+              "crate",
+              -3,
+              2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "The Long Shot",
+          "style": "timber",
+          "x": 232,
+          "z": 198,
+          "w": 10,
+          "d": 8,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              2.2,
+              0,
+              0
+            ],
+            [
+              "shelf",
+              -3,
+              -2,
+              0
+            ],
+            [
+              "crate",
+              -3,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Aldermere Armoury",
+          "style": "stone",
+          "x": 266,
+          "z": 188,
+          "w": 10,
+          "d": 9,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              -2.2,
+              0,
+              0
+            ],
+            [
+              "anvil",
+              2.4,
+              -1.5,
+              0
+            ],
+            [
+              "crate",
+              3,
+              2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "The Kindled Sigil",
+          "style": "stone",
+          "x": 268,
+          "z": 200,
+          "w": 10,
+          "d": 9,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              -2.2,
+              0,
+              0
+            ],
+            [
+              "altar_rc",
+              2.4,
+              -2,
+              0
+            ],
+            [
+              "candle",
+              0,
+              2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Facet & Filigree",
+          "style": "timber",
+          "x": 257,
+          "z": 205,
+          "w": 9,
+          "d": 8,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              0,
+              -1.5,
+              0
+            ],
+            [
+              "furnace",
+              2.6,
+              1.6,
+              0
+            ],
+            [
+              "crate",
+              -2.8,
+              1.6,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Aldermere Kitchen",
+          "style": "timber",
+          "x": 280,
+          "z": 204,
+          "w": 10,
+          "d": 8,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "range",
+              2.5,
+              -1.5,
+              0
+            ],
+            [
+              "table",
+              -1.5,
+              1,
+              0
+            ],
+            [
+              "barrel",
+              -3,
+              -2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Townhouse",
+          "style": "timber",
+          "x": 219,
+          "z": 176,
+          "w": 8,
+          "d": 7,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bed",
+              -1.6,
+              -1.6,
+              0
+            ],
+            [
+              "table",
+              1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Townhouse",
+          "style": "timber",
+          "x": 288,
+          "z": 166,
+          "w": 8,
+          "d": 7,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bed",
+              1.6,
+              -1.6,
+              0
+            ],
+            [
+              "table",
+              -1,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "props": [
+        {
+          "t": "prop",
+          "kind": "fountain",
+          "x": 250,
+          "z": 186
+        },
+        {
+          "t": "prop",
+          "kind": "statue",
+          "x": 244,
+          "z": 182
+        },
+        {
+          "t": "prop",
+          "kind": "obelisk",
+          "x": 256,
+          "z": 182
+        },
+        {
+          "t": "sign",
+          "x": 250,
+          "z": 192,
+          "txt": "Aldermere. Market ahead. Keep to the north. Road south to Oakheart."
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 246,
+          "z": 178
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 254,
+          "z": 178
+        },
+        {
+          "t": "prop",
+          "kind": "cart",
+          "x": 240,
+          "z": 192
+        },
+        {
+          "t": "prop",
+          "kind": "crate",
+          "x": 262,
+          "z": 180
+        },
+        {
+          "t": "prop",
+          "kind": "barrel",
+          "x": 263.4,
+          "z": 181
+        },
+        {
+          "t": "prop",
+          "kind": "well",
+          "x": 238,
+          "z": 182
+        }
+      ],
+      "trees": [],
+      "fences": [],
+      "posts": {
+        "banker_hild": {
+          "x": 232,
+          "z": 168
+        },
+        "armourer_kest": {
+          "x": 234.4,
+          "z": 186
+        },
+        "weapon_sarn": {
+          "x": 263.6,
+          "z": 188
+        },
+        "mage_ilvara": {
+          "x": 268,
+          "z": 197.5
+        },
+        "fletcher_arn": {
+          "x": 234.4,
+          "z": 198
+        },
+        "jeweller_pia": {
+          "x": 257,
+          "z": 206.6
+        },
+        "lorekeeper_venn": {
+          "x": 283.6,
+          "z": 182
+        },
+        "cook_mabel": {
+          "x": 280,
+          "z": 201.5
+        },
+        "slayer_vex": {
+          "x": 252,
+          "z": 190
+        },
+        "thief_kito": {
+          "x": 246,
+          "z": 194
+        },
+        "traveller_esk": {
+          "x": 250,
+          "z": 189
+        },
+        "guard_mera": {
+          "x": 248,
+          "z": 193
+        },
+        "guard_owan": {
+          "x": 242,
+          "z": 164.5
+        }
+      }
+    },
+    "DUNHOLLOW": {
+      "name": "Dunhollow",
+      "centre": {
+        "x": 200,
+        "z": 60
+      },
+      "radius": 30,
+      "buildings": [
+        {
+          "name": "Dunhollow Hall",
+          "style": "dwarf",
+          "x": 192,
+          "z": 64,
+          "w": 14,
+          "d": 10,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "throne",
+              0,
+              -3,
+              0
+            ],
+            [
+              "bank_booth",
+              -4,
+              2,
+              0
+            ],
+            [
+              "bank_booth",
+              -1.5,
+              2,
+              0
+            ],
+            [
+              "bank_booth",
+              1.5,
+              2,
+              0
+            ],
+            [
+              "brazier",
+              -5.5,
+              -2.5,
+              0
+            ],
+            [
+              "brazier",
+              5.5,
+              -2.5,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Frostforge",
+          "style": "dwarf",
+          "x": 196,
+          "z": 50,
+          "w": 12,
+          "d": 9,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "anvil",
+              -2.5,
+              -1.5,
+              0
+            ],
+            [
+              "anvil",
+              2.5,
+              -1.5,
+              0
+            ],
+            [
+              "furnace",
+              0,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Dunhollow Pick & Pail",
+          "style": "dwarf",
+          "x": 212,
+          "z": 56,
+          "w": 9,
+          "d": 8,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              -2,
+              0,
+              0
+            ],
+            [
+              "crate",
+              2.4,
+              -2.2,
+              0
+            ],
+            [
+              "barrel",
+              2.4,
+              2.2,
+              0
+            ]
+          ]
+        }
+      ],
+      "props": [
+        {
+          "t": "sign",
+          "x": 200,
+          "z": 70,
+          "txt": "Dunhollow. Deep mines beyond. Watch your step."
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 190,
+          "z": 69
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 202,
+          "z": 69
+        },
+        {
+          "t": "prop",
+          "kind": "cart",
+          "x": 206,
+          "z": 66
+        },
+        {
+          "t": "prop",
+          "kind": "standing_stone",
+          "x": 204,
+          "z": 48
+        }
+      ],
+      "trees": [],
+      "fences": [],
+      "posts": {
+        "dwarf_borin": {
+          "x": 209.6,
+          "z": 56
+        },
+        "dwarf_hega": {
+          "x": 198.5,
+          "z": 50
+        },
+        "banker_brack": {
+          "x": 190.5,
+          "z": 66
+        }
+      }
+    },
+    "SALTBROOK": {
+      "name": "Saltbrook",
+      "centre": {
+        "x": 138,
+        "z": 328
+      },
+      "radius": 32,
+      "buildings": [
+        {
+          "name": "Saltbrook Bank",
+          "style": "stone",
+          "x": 126,
+          "z": 318,
+          "w": 10,
+          "d": 8,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bank_booth",
+              -2.5,
+              2,
+              0
+            ],
+            [
+              "bank_booth",
+              0,
+              2,
+              0
+            ],
+            [
+              "bank_booth",
+              2.5,
+              2,
+              0
+            ],
+            [
+              "crate",
+              -3.4,
+              -2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Saltbrook Fishmonger",
+          "style": "timber",
+          "x": 152,
+          "z": 324,
+          "w": 10,
+          "d": 8,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              -2.2,
+              0,
+              0
+            ],
+            [
+              "stall",
+              2,
+              1.6,
+              0
+            ],
+            [
+              "barrel",
+              3,
+              -2.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Harbourmaster's Office",
+          "style": "stone",
+          "x": 138,
+          "z": 336,
+          "w": 9,
+          "d": 8,
+          "waterfront": 1,
+          "door": [
+            2,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "table",
+              0,
+              -1,
+              0
+            ],
+            [
+              "chair",
+              0,
+              0.4,
+              0
+            ],
+            [
+              "shelf",
+              -2.8,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Net Loft",
+          "style": "timber",
+          "x": 154,
+          "z": 336,
+          "w": 9,
+          "d": 7,
+          "waterfront": 1,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              1.5,
+              -1.5,
+              0
+            ],
+            [
+              "barrel",
+              1.5,
+              1.5,
+              0
+            ],
+            [
+              "shelf",
+              -2.6,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Salt Cottage",
+          "style": "timber",
+          "x": 125,
+          "z": 330,
+          "w": 7,
+          "d": 7,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bed",
+              -1.6,
+              -1.6,
+              0
+            ],
+            [
+              "table",
+              1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Salt Cottage",
+          "style": "timber",
+          "x": 139,
+          "z": 312,
+          "w": 7,
+          "d": 7,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bed",
+              -1.6,
+              1.6,
+              0
+            ],
+            [
+              "shelf",
+              1.4,
+              -1.4,
+              0
+            ]
+          ]
+        }
+      ],
+      "props": [
+        {
+          "t": "sign",
+          "x": 140,
+          "z": 320,
+          "txt": "Saltbrook. Fishmonger east. Docks south. Mind the tide."
+        },
+        {
+          "t": "well",
+          "x": 134,
+          "z": 328
+        },
+        {
+          "t": "prop",
+          "kind": "crate",
+          "x": 144,
+          "z": 332
+        },
+        {
+          "t": "prop",
+          "kind": "barrel",
+          "x": 145.4,
+          "z": 333
+        },
+        {
+          "t": "prop",
+          "kind": "cart",
+          "x": 146,
+          "z": 326
+        },
+        {
+          "t": "prop",
+          "kind": "campfire",
+          "x": 132,
+          "z": 336
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 131,
+          "z": 325
+        }
+      ],
+      "trees": [],
+      "fences": [],
+      "posts": {
+        "banker_dorn": {
+          "x": 126,
+          "z": 316
+        },
+        "fisher_nell": {
+          "x": 149.6,
+          "z": 324
+        },
+        "captain_rell": {
+          "x": 138,
+          "z": 340
+        }
+      }
+    },
+    "MIREFEN": {
+      "name": "Mirefen",
+      "centre": {
+        "x": 54,
+        "z": 170
+      },
+      "radius": 28,
+      "buildings": [
+        {
+          "name": "The Crooked Mortar",
+          "style": "hut",
+          "x": 54,
+          "z": 164,
+          "w": 9,
+          "d": 8,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "counter",
+              0,
+              -1.5,
+              0
+            ],
+            [
+              "shelf",
+              -3,
+              1.6,
+              0
+            ],
+            [
+              "shelf",
+              3,
+              1.6,
+              0
+            ],
+            [
+              "candle",
+              0,
+              1.6,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Ruined Hall",
+          "style": "ruin",
+          "x": 40,
+          "z": 174,
+          "w": 12,
+          "d": 9,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              -3,
+              -2,
+              0
+            ],
+            [
+              "altar",
+              2,
+              -2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Sunken House",
+          "style": "ruin",
+          "x": 66,
+          "z": 151,
+          "w": 8,
+          "d": 7,
+          "door": [
+            2,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              1.4,
+              1.4,
+              0
+            ]
+          ]
+        }
+      ],
+      "props": [
+        {
+          "t": "sign",
+          "x": 56,
+          "z": 172,
+          "txt": "Mirefen. Turn back if you value dry feet."
+        },
+        {
+          "t": "prop",
+          "kind": "standing_stone",
+          "x": 46,
+          "z": 164
+        },
+        {
+          "t": "prop",
+          "kind": "ruin_arch",
+          "x": 48,
+          "z": 180
+        },
+        {
+          "t": "prop",
+          "kind": "campfire",
+          "x": 58,
+          "z": 170
+        },
+        {
+          "t": "prop",
+          "kind": "crate",
+          "x": 44,
+          "z": 168
+        }
+      ],
+      "trees": [],
+      "fences": [],
+      "posts": {
+        "witch_morra": {
+          "x": 54,
+          "z": 161.5
+        }
+      }
+    },
+    "BLIGHTFORT": {
+      "name": "Blightfort",
+      "centre": {
+        "x": 334,
+        "z": 216
+      },
+      "radius": 32,
+      "buildings": [
+        {
+          "name": "Blightfort Gate",
+          "style": "castle",
+          "x": 330,
+          "z": 208,
+          "w": 12,
+          "d": 6,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": []
+        },
+        {
+          "name": "Warden's Hall",
+          "style": "castle",
+          "x": 340,
+          "z": 224,
+          "w": 14,
+          "d": 10,
+          "door": [
+            2,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "throne",
+              0,
+              -3,
+              0
+            ],
+            [
+              "brazier",
+              -5,
+              2,
+              0
+            ],
+            [
+              "brazier",
+              5,
+              2,
+              0
+            ],
+            [
+              "table",
+              0,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Watchtower (ruined)",
+          "style": "ruin",
+          "x": 318,
+          "z": 224,
+          "w": 9,
+          "d": 9,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              -2,
+              -2,
+              0
+            ],
+            [
+              "shelf",
+              2,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Barracks",
+          "style": "stone",
+          "x": 348,
+          "z": 208,
+          "w": 10,
+          "d": 8,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bed",
+              2,
+              -2,
+              0
+            ],
+            [
+              "bed",
+              2,
+              2,
+              0
+            ],
+            [
+              "table",
+              -2.5,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "props": [
+        {
+          "t": "sign",
+          "x": 326,
+          "z": 214,
+          "txt": "Blightfort. Beyond here the Warden keeps no peace."
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 324,
+          "z": 222
+        },
+        {
+          "t": "prop",
+          "kind": "brazier",
+          "x": 338,
+          "z": 216
+        },
+        {
+          "t": "prop",
+          "kind": "ruin_arch",
+          "x": 322,
+          "z": 218
+        },
+        {
+          "t": "prop",
+          "kind": "crate",
+          "x": 344,
+          "z": 214
+        }
+      ],
+      "trees": [],
+      "fences": [],
+      "posts": {
+        "watcher_sil": {
+          "x": 330,
+          "z": 213
+        }
+      }
+    },
+    "OUTPOSTS": {
+      "name": "Outposts",
+      "centre": {
+        "x": 192,
+        "z": 192
+      },
+      "radius": 0,
+      "buildings": [
+        {
+          "name": "Mining Camp Shed",
+          "style": "hut",
+          "x": 151,
+          "z": 201,
+          "w": 8,
+          "d": 7,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              -1.6,
+              -1.6,
+              0
+            ],
+            [
+              "barrel",
+              1.6,
+              -1.6,
+              0
+            ],
+            [
+              "anvil",
+              0,
+              1.4,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Eastfield Farmhouse",
+          "style": "barn",
+          "x": 208,
+          "z": 293,
+          "w": 10,
+          "d": 8,
+          "door": [
+            2,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "table",
+              0,
+              1,
+              0
+            ],
+            [
+              "bed",
+              -2.8,
+              -1.8,
+              0
+            ],
+            [
+              "crate",
+              2.8,
+              -1.8,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Eastfield Barn",
+          "style": "barn",
+          "x": 216,
+          "z": 281,
+          "w": 12,
+          "d": 10,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              2,
+              -2,
+              0
+            ],
+            [
+              "crate",
+              2,
+              2,
+              0
+            ],
+            [
+              "barrel",
+              -2,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Seed Shed",
+          "style": "hut",
+          "x": 197.7,
+          "z": 291,
+          "w": 7,
+          "d": 6,
+          "door": [
+            0,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "shelf",
+              0,
+              -1.4,
+              0
+            ],
+            [
+              "crate",
+              1.6,
+              1.2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Roadside Chapel",
+          "style": "stone",
+          "x": 92,
+          "z": 266,
+          "w": 9,
+          "d": 10,
+          "door": [
+            1,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "altar",
+              0,
+              -3,
+              0
+            ],
+            [
+              "pew",
+              -1.8,
+              0.5,
+              0
+            ],
+            [
+              "pew",
+              1.8,
+              0.5,
+              0
+            ],
+            [
+              "candle",
+              0,
+              -1.5,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Watchtower (ruined)",
+          "style": "ruin",
+          "x": 306,
+          "z": 186,
+          "w": 9,
+          "d": 9,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              2,
+              -2,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Pirate Hideout",
+          "style": "hut",
+          "x": 176,
+          "z": 355,
+          "w": 9,
+          "d": 8,
+          "waterfront": 1,
+          "door": [
+            2,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "crate",
+              -2,
+              -1.6,
+              0
+            ],
+            [
+              "barrel",
+              2,
+              -1.6,
+              0
+            ],
+            [
+              "table",
+              0,
+              1.6,
+              0
+            ]
+          ]
+        },
+        {
+          "name": "Brookside Cottage",
+          "style": "timber",
+          "x": 198,
+          "z": 276,
+          "w": 7,
+          "d": 7,
+          "door": [
+            3,
+            0
+          ],
+          "rot": 0,
+          "interior": [
+            [
+              "bed",
+              1.6,
+              -1.6,
+              0
+            ],
+            [
+              "table",
+              -1.2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "props": [
+        {
+          "t": "sign",
+          "x": 155,
+          "z": 203,
+          "txt": "Oakheart Mine. Copper and tin. Bring a pickaxe."
+        },
+        {
+          "t": "sign",
+          "x": 92,
+          "z": 271,
+          "txt": "Roadside Chapel. Rest here."
+        },
+        {
+          "t": "prop",
+          "kind": "cart",
+          "x": 204,
+          "z": 288
+        },
+        {
+          "t": "prop",
+          "kind": "campfire",
+          "x": 176,
+          "z": 350
+        }
+      ],
+      "trees": [],
+      "fences": [],
+      "posts": {}
+    }
+  },
+  "resources": {
+    "zones": [
+      {
+        "name": "Oakheart Woods",
+        "kind": "forest",
+        "x": 126,
+        "z": 272,
+        "r": 24,
+        "species": [
+          "Tree",
+          "Tree",
+          "Tree",
+          "Oak"
+        ],
+        "spacing": 3.4,
+        "density": 0.62
+      },
+      {
+        "name": "Brookside Copse",
+        "kind": "forest",
+        "x": 162,
+        "z": 242,
+        "r": 18,
+        "species": [
+          "Tree",
+          "Silverbirch"
+        ],
+        "spacing": 3.5,
+        "density": 0.58
+      },
+      {
+        "name": "Greenfurrow Orchard",
+        "kind": "forest",
+        "x": 150,
+        "z": 308,
+        "r": 15,
+        "species": [
+          "Tree",
+          "Oak"
+        ],
+        "spacing": 3.7,
+        "density": 0.56
+      },
+      {
+        "name": "Oakheart Beginner Mine",
+        "kind": "mine",
+        "x": 150,
+        "z": 206,
+        "r": 11,
+        "ores": [
+          "Copper ore",
+          "Copper ore",
+          "Tin ore",
+          "Tin ore"
+        ],
+        "spacing": 2.9,
+        "density": 0.72
+      },
+      {
+        "name": "Greenfurrow Flax",
+        "kind": "flax",
+        "x": 142,
+        "z": 296,
+        "r": 7,
+        "spacing": 2.6,
+        "density": 0.65
+      },
+      {
+        "name": "Oakbrook Shallows",
+        "kind": "fishing",
+        "x": 178,
+        "z": 272,
+        "r": 18,
+        "fish": [
+          "Shrimp",
+          "Sardine"
+        ],
+        "spacing": 4,
+        "density": 0.85
+      },
+      {
+        "name": "Aldermere Parkwood",
+        "kind": "forest",
+        "x": 214,
+        "z": 172,
+        "r": 22,
+        "species": [
+          "Oak",
+          "Oak",
+          "Silverbirch"
+        ],
+        "spacing": 3.5,
+        "density": 0.58
+      },
+      {
+        "name": "Kingsroad Woods",
+        "kind": "forest",
+        "x": 224,
+        "z": 214,
+        "r": 20,
+        "species": [
+          "Tree",
+          "Oak"
+        ],
+        "spacing": 3.5,
+        "density": 0.58
+      },
+      {
+        "name": "Ironhill Workings",
+        "kind": "mine",
+        "x": 228,
+        "z": 156,
+        "r": 13,
+        "ores": [
+          "Iron ore",
+          "Iron ore",
+          "Coal"
+        ],
+        "spacing": 2.9,
+        "density": 0.72
+      },
+      {
+        "name": "Kragmar Pinelands",
+        "kind": "forest",
+        "x": 206,
+        "z": 104,
+        "r": 26,
+        "species": [
+          "Ironbark",
+          "Ironbark",
+          "Tree"
+        ],
+        "spacing": 3.7,
+        "density": 0.56
+      },
+      {
+        "name": "Dunhollow Coalface",
+        "kind": "mine",
+        "x": 196,
+        "z": 82,
+        "r": 12,
+        "ores": [
+          "Coal",
+          "Coal",
+          "Iron ore"
+        ],
+        "spacing": 2.9,
+        "density": 0.72
+      },
+      {
+        "name": "High Seam",
+        "kind": "mine",
+        "x": 214,
+        "z": 92,
+        "r": 10,
+        "ores": [
+          "Coal",
+          "Iron ore"
+        ],
+        "spacing": 2.9,
+        "density": 0.72
+      },
+      {
+        "name": "Mirefen Willows",
+        "kind": "forest",
+        "x": 74,
+        "z": 188,
+        "r": 20,
+        "minH": 0.45,
+        "species": [
+          "Willow",
+          "Willow",
+          "Tree"
+        ],
+        "spacing": 3.5,
+        "density": 0.58
+      },
+      {
+        "name": "Blackfen Herb Beds",
+        "kind": "herbs",
+        "x": 50,
+        "z": 198,
+        "r": 13,
+        "minH": 0.4,
+        "herbs": [
+          "Marshleaf",
+          "Blueleaf",
+          "Duskcap"
+        ],
+        "spacing": 4.5,
+        "density": 0.5
+      },
+      {
+        "name": "Mirefen Snares",
+        "kind": "hunting",
+        "x": 44,
+        "z": 192,
+        "r": 13,
+        "minH": 0.42,
+        "spacing": 3.9,
+        "density": 0.55
+      },
+      {
+        "name": "Fen Pools",
+        "kind": "fishing",
+        "x": 58,
+        "z": 198,
+        "r": 14,
+        "fish": [
+          "Pike",
+          "Trout"
+        ],
+        "spacing": 4,
+        "density": 0.85
+      },
+      {
+        "name": "Saltbrook Shore Woods",
+        "kind": "forest",
+        "x": 116,
+        "z": 306,
+        "r": 18,
+        "species": [
+          "Tree",
+          "Oak"
+        ],
+        "spacing": 3.5,
+        "density": 0.58
+      },
+      {
+        "name": "Saltbrook Tin Scrape",
+        "kind": "mine",
+        "x": 120,
+        "z": 296,
+        "r": 9,
+        "ores": [
+          "Tin ore",
+          "Copper ore"
+        ],
+        "spacing": 2.9,
+        "density": 0.72
+      },
+      {
+        "name": "Saltbrook Shallows",
+        "kind": "fishing",
+        "x": 134,
+        "z": 342,
+        "r": 20,
+        "fish": [
+          "Shrimp",
+          "Sardine",
+          "Herring"
+        ],
+        "spacing": 4,
+        "density": 0.85
+      },
+      {
+        "name": "Saltbrook Deeps",
+        "kind": "fishing",
+        "x": 158,
+        "z": 348,
+        "r": 18,
+        "fish": [
+          "Lobster",
+          "Bass",
+          "Salmon"
+        ],
+        "spacing": 4,
+        "density": 0.85
+      },
+      {
+        "name": "Blight Deadwood",
+        "kind": "forest",
+        "x": 342,
+        "z": 244,
+        "r": 24,
+        "species": [
+          "Ghostwood",
+          "Ghostwood",
+          "Ironbark"
+        ],
+        "spacing": 4,
+        "density": 0.5
+      },
+      {
+        "name": "Ashen Seam",
+        "kind": "mine",
+        "x": 330,
+        "z": 244,
+        "r": 12,
+        "ores": [
+          "Kaldrite ore",
+          "Coal"
+        ],
+        "spacing": 2.9,
+        "density": 0.72
+      },
+      {
+        "name": "Warden's Vein",
+        "kind": "mine",
+        "x": 358,
+        "z": 240,
+        "r": 10,
+        "ores": [
+          "Aetherium ore",
+          "Kaldrite ore"
+        ],
+        "spacing": 2.9,
+        "density": 0.72
+      },
+      {
+        "name": "Blight Herbs",
+        "kind": "herbs",
+        "x": 314,
+        "z": 240,
+        "r": 13,
+        "herbs": [
+          "Emberroot",
+          "Bitterroot",
+          "Redthistle"
+        ],
+        "spacing": 3.8,
+        "density": 0.5
+      },
+      {
+        "name": "Westreach Forest",
+        "kind": "forest",
+        "x": 104,
+        "z": 228,
+        "r": 26,
+        "species": [
+          "Oak",
+          "Tree",
+          "Willow"
+        ],
+        "spacing": 4,
+        "density": 0.5
+      },
+      {
+        "name": "Northwood",
+        "kind": "forest",
+        "x": 150,
+        "z": 150,
+        "r": 26,
+        "species": [
+          "Tree",
+          "Silverbirch",
+          "Oak"
+        ],
+        "spacing": 4,
+        "density": 0.5
+      },
+      {
+        "name": "Frostvine Slopes",
+        "kind": "herbs",
+        "x": 176,
+        "z": 120,
+        "r": 13,
+        "herbs": [
+          "Frostvine",
+          "Bitterroot"
+        ],
+        "spacing": 3.9,
+        "density": 0.55
+      },
+      {
+        "name": "Eastmarch Woods",
+        "kind": "forest",
+        "x": 292,
+        "z": 180,
+        "r": 24,
+        "species": [
+          "Oak",
+          "Ironbark"
+        ],
+        "spacing": 4,
+        "density": 0.5
+      }
+    ],
+    "landmarks": [
+      {
+        "t": "agility",
+        "x": 216,
+        "z": 248,
+        "course": "oakvale",
+        "ord": 0,
+        "lvl": 1,
+        "xp": 12,
+        "o": "log"
+      },
+      {
+        "t": "agility",
+        "x": 220,
+        "z": 228,
+        "course": "oakvale",
+        "ord": 5,
+        "lvl": 25,
+        "xp": 42,
+        "o": "wall"
+      },
+      {
+        "t": "agility",
+        "x": 222,
+        "z": 242,
+        "course": "oakvale",
+        "ord": 1,
+        "lvl": 5,
+        "xp": 18,
+        "o": "ropeswing"
+      },
+      {
+        "t": "agility",
+        "x": 228,
+        "z": 226,
+        "course": "oakvale",
+        "ord": 4,
+        "lvl": 20,
+        "xp": 34,
+        "o": "beam"
+      },
+      {
+        "t": "agility",
+        "x": 228,
+        "z": 238,
+        "course": "oakvale",
+        "ord": 2,
+        "lvl": 10,
+        "xp": 22,
+        "o": "stones"
+      },
+      {
+        "t": "agility",
+        "x": 232,
+        "z": 232,
+        "course": "oakvale",
+        "ord": 3,
+        "lvl": 15,
+        "xp": 28,
+        "o": "net"
+      },
+      {
+        "t": "altar",
+        "x": 92,
+        "z": 268.5
+      },
+      {
+        "t": "altar_rc",
+        "x": 88,
+        "z": 196,
+        "rune": "Water"
+      },
+      {
+        "t": "altar_rc",
+        "x": 92,
+        "z": 156,
+        "rune": "Nature"
+      },
+      {
+        "t": "altar_rc",
+        "x": 108,
+        "z": 230,
+        "rune": "Mind"
+      },
+      {
+        "t": "altar_rc",
+        "x": 134,
+        "z": 196,
+        "rune": "Air"
+      },
+      {
+        "t": "altar_rc",
+        "x": 214,
+        "z": 122,
+        "rune": "Earth"
+      },
+      {
+        "t": "altar_rc",
+        "x": 262,
+        "z": 118,
+        "rune": "Body"
+      },
+      {
+        "t": "altar_rc",
+        "x": 306,
+        "z": 236,
+        "rune": "Fire"
+      },
+      {
+        "t": "bridge",
+        "x": 169.3,
+        "z": 196,
+        "len": 18,
+        "rot": 1.5707963267948966
+      },
+      {
+        "t": "bridge",
+        "x": 178.8,
+        "z": 266,
+        "len": 18,
+        "rot": 1.5707963267948966
+      },
+      {
+        "t": "dungeon",
+        "x": 56,
+        "z": 203.5,
+        "name": "Mirefen Crypt"
+      },
+      {
+        "t": "loom",
+        "x": 241.5,
+        "z": 224.9
+      },
+      {
+        "t": "patch",
+        "x": 202,
+        "z": 282,
+        "kind": "allotment"
+      },
+      {
+        "t": "patch",
+        "x": 206,
+        "z": 278,
+        "kind": "allotment"
+      },
+      {
+        "t": "patch",
+        "x": 206,
+        "z": 282,
+        "kind": "allotment"
+      },
+      {
+        "t": "sign",
+        "x": 96,
+        "z": 214,
+        "txt": "Mirefen  -  no bottom, no mercy"
+      },
+      {
+        "t": "sign",
+        "x": 110,
+        "z": 258,
+        "txt": "Wayside Shrine"
+      },
+      {
+        "t": "sign",
+        "x": 122,
+        "z": 232,
+        "txt": "Old Quarry"
+      },
+      {
+        "t": "sign",
+        "x": 134,
+        "z": 200,
+        "txt": "The Old Circle"
+      },
+      {
+        "t": "sign",
+        "x": 162,
+        "z": 214,
+        "txt": "Copper & Tin  -  novice seam"
+      },
+      {
+        "t": "sign",
+        "x": 196,
+        "z": 280,
+        "txt": "Greenfurrow Farms"
+      },
+      {
+        "t": "sign",
+        "x": 214,
+        "z": 312,
+        "txt": "Eastern Sands"
+      },
+      {
+        "t": "sign",
+        "x": 216,
+        "z": 252,
+        "txt": "Oakvale Agility Course"
+      },
+      {
+        "t": "sign",
+        "x": 230,
+        "z": 232,
+        "txt": "Aldermere  -  2 miles"
+      },
+      {
+        "t": "sign",
+        "x": 268,
+        "z": 128,
+        "txt": "Ironbark Stand"
+      },
+      {
+        "t": "sign",
+        "x": 306,
+        "z": 192,
+        "txt": "Watcher's Tower (ruined)"
+      },
+      {
+        "t": "standing_stone",
+        "x": 132,
+        "z": 194
+      },
+      {
+        "t": "standing_stone",
+        "x": 134,
+        "z": 191
+      },
+      {
+        "t": "standing_stone",
+        "x": 134,
+        "z": 199
+      },
+      {
+        "t": "standing_stone",
+        "x": 136,
+        "z": 194
+      }
+    ]
+  }
+}

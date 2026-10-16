@@ -1,0 +1,149 @@
+{
+  "version": "2.0",
+  "textures": [
+    "textures/models/barrel__wood_planks.png",
+    "textures/models/tree_willow__bark_oak.png",
+    "textures/models/well__wood_planks.png",
+    "textures/models/shield__wood_planks.png",
+    "textures/models/axe__stone_wall.png",
+    "textures/models/tree_pine__bark_pine.png",
+    "textures/models/house_timber__stone_wall.png",
+    "textures/models/pickaxe__stone_wall.png",
+    "textures/models/fence_section__wood_planks.png",
+    "textures/models/adventurer_base__wood_planks.png",
+    "textures/models/well__stone_wall.png",
+    "textures/models/tree_oak__leaves_oak.png",
+    "textures/models/signpost__wood_planks.png",
+    "textures/models/tree_oak__bark_oak.png",
+    "textures/models/sword__stone_wall.png",
+    "textures/models/house_timber__wood_planks.png",
+    "textures/models/tree_willow__leaves_willow.png",
+    "textures/models/house_timber__roof_tiles.png",
+    "textures/models/pickaxe__wood_planks.png",
+    "textures/models/axe__wood_planks.png",
+    "textures/models/tree_pine__leaves_oak.png",
+    "textures/models/tree_dead__bark_oak.png",
+    "textures/nature/leaves_oak.png",
+    "textures/nature/bark_pine.png",
+    "textures/nature/leaves_willow.png",
+    "textures/nature/bark_oak.png",
+    "textures/buildings/floor_stone.png",
+    "textures/buildings/brick_wall.png",
+    "textures/buildings/mossy_stone.png",
+    "textures/buildings/stone_wall.png",
+    "textures/buildings/wood_planks.png",
+    "textures/buildings/roof_tiles.png",
+    "textures/terrain/grass_lush.png",
+    "textures/terrain/water.png",
+    "textures/terrain/dirt.png",
+    "textures/terrain/rock_ground.png",
+    "textures/terrain/snow.png",
+    "textures/terrain/grass_dry.png",
+    "textures/terrain/sand.png",
+    "textures/terrain/dirt_dark.png",
+    "textures/terrain/road_cobble.png",
+    "textures/terrain/swamp.png"
+  ],
+  "models": [
+    "models/props/well.glb",
+    "models/props/barrel.glb",
+    "models/props/fence_section.glb",
+    "models/props/signpost.glb",
+    "models/equipment/shield.glb",
+    "models/equipment/axe.glb",
+    "models/equipment/pickaxe.glb",
+    "models/equipment/sword.glb",
+    "models/characters/adventurer_base.glb",
+    "models/buildings/house_timber.glb",
+    "models/trees/tree_pine.glb",
+    "models/trees/tree_willow.glb",
+    "models/trees/tree_dead.glb",
+    "models/trees/tree_oak.glb"
+  ],
+  "validation": [
+    {
+      "file": "models/buildings/house_timber.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 4
+    },
+    {
+      "file": "models/characters/adventurer_base.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 13
+    },
+    {
+      "file": "models/equipment/axe.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 2
+    },
+    {
+      "file": "models/equipment/pickaxe.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 2
+    },
+    {
+      "file": "models/equipment/shield.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 2
+    },
+    {
+      "file": "models/equipment/sword.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 3
+    },
+    {
+      "file": "models/props/barrel.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 1
+    },
+    {
+      "file": "models/props/fence_section.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 4
+    },
+    {
+      "file": "models/props/signpost.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 2
+    },
+    {
+      "file": "models/props/well.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 4
+    },
+    {
+      "file": "models/trees/tree_dead.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 3
+    },
+    {
+      "file": "models/trees/tree_oak.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 6
+    },
+    {
+      "file": "models/trees/tree_pine.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 6
+    },
+    {
+      "file": "models/trees/tree_willow.glb",
+      "geometry": true,
+      "all_primitives_have_uv": true,
+      "primitives": 9
+    }
+  ]
+}

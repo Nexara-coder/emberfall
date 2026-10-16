@@ -1,0 +1,11 @@
+# gdtoolkit lint configuration for this project.
+#
+# Everything is left at the default except max-returns. The network error
+# diagnosis in scripts/net.gd is a cascade of early returns on purpose: each
+# branch names a specific hosting failure and tells the player what to do about
+# it. Collapsing it into one exit point to satisfy a counter would make it
+# harder to read, not easier.
+max-returns: 40
+
+# Signature lines wrap at 100 characters; the default is fine.
+max-line-length: 100

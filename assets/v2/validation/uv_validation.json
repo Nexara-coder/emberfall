@@ -1,0 +1,86 @@
+[
+  {
+    "file": "models/buildings/house_timber.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 4
+  },
+  {
+    "file": "models/characters/adventurer_base.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 13
+  },
+  {
+    "file": "models/equipment/axe.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 2
+  },
+  {
+    "file": "models/equipment/pickaxe.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 2
+  },
+  {
+    "file": "models/equipment/shield.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 2
+  },
+  {
+    "file": "models/equipment/sword.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 3
+  },
+  {
+    "file": "models/props/barrel.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 1
+  },
+  {
+    "file": "models/props/fence_section.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 4
+  },
+  {
+    "file": "models/props/signpost.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 2
+  },
+  {
+    "file": "models/props/well.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 4
+  },
+  {
+    "file": "models/trees/tree_dead.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 3
+  },
+  {
+    "file": "models/trees/tree_oak.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 6
+  },
+  {
+    "file": "models/trees/tree_pine.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 6
+  },
+  {
+    "file": "models/trees/tree_willow.glb",
+    "geometry": true,
+    "all_primitives_have_uv": true,
+    "primitives": 9
+  }
+]

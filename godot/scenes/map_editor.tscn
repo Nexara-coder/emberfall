@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://addons/emberfall_map/map_root.gd" id="1_map"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
+sky_top_color = Color(0.4, 0.58, 0.82, 1)
+sky_horizon_color = Color(0.78, 0.83, 0.87, 1)
+ground_bottom_color = Color(0.3, 0.32, 0.28, 1)
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMat")
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.7
+ambient_light_energy = 1.1
+tonemap_mode = 2
+
+[node name="MapEditor" type="Node3D"]
+script = ExtResource("1_map")
+show_models = true
+show_terrain = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 80, 0)
+light_energy = 1.0
+shadow_enabled = false

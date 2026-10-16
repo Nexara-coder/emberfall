@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Emberfall V21 Safe Renderer</title>
+<link rel="stylesheet" href="css/style.css?v=414f1400abac">
+</head>
+<body>
+
+<!-- ===================================================== TITLE SCREEN -->
+<div id="screen-title" class="screen">
+  <div class="title-bg"><canvas id="titleCanvas"></canvas></div>
+  <div class="title-wrap">
+    <h1 class="game-title">EMBER<span class="numeral">FALL</span></h1>
+    <p class="tagline">A world of stone, steel and stubborn hope.</p>
+
+    <div class="title-buttons">
+      <button class="stone-btn big" id="btnShowLogin">Log In</button>
+      <button class="stone-btn big" id="btnShowRegister">Create Account</button>
+    </div>
+
+    <div class="parchment form-box" id="formLogin" style="display:none">
+      <h2>Log In</h2>
+      <label>Name <input type="text" id="loginUser" maxlength="14" autocomplete="username"></label>
+      <label>Password <input type="password" id="loginPass" maxlength="60" autocomplete="current-password"></label>
+      <div class="form-err" id="loginErr"></div>
+      <div class="form-row">
+        <button class="stone-btn" id="btnLogin">Enter the Realm</button>
+        <button class="stone-btn ghost" data-back>Back</button>
+      </div>
+    </div>
+
+    <div class="parchment form-box" id="formRegister" style="display:none">
+      <h2>Create Account</h2>
+      <label>Name <input type="text" id="regUser" maxlength="14" autocomplete="username"></label>
+      <label>Password <input type="password" id="regPass" maxlength="60" autocomplete="new-password"></label>
+      <label>Repeat <input type="password" id="regPass2" maxlength="60" autocomplete="new-password"></label>
+      <div class="form-err" id="regErr"></div>
+      <div class="form-row">
+        <button class="stone-btn" id="btnRegister">Create</button>
+        <button class="stone-btn ghost" data-back>Back</button>
+      </div>
+    </div>
+
+    <div id="buildTag"></div>
+    <p class="footnote">An original world. No assets or names are taken from any other game.</p>
+  </div>
+</div>
+
+<!-- ============================================== CHARACTER CREATION -->
+<div id="screen-char" class="screen" style="display:none">
+  <div class="char-layout">
+    <div class="char-preview"><div id="charViewport"></div>
+      <div class="char-spin"><button class="stone-btn small" id="spinL">&#8592;</button><button class="stone-btn small" id="spinR">&#8594;</button></div>
+    </div>
+    <div class="parchment char-opts">
+      <h2>Make Your Mark</h2>
+      <label>Display name <input type="text" id="charName" maxlength="14"></label>
+      <div class="opt-row"><span>Build</span><div class="swatches" id="optBuild"></div></div>
+      <div class="opt-row"><span>Skin</span><div class="swatches" id="optSkin"></div></div>
+      <div class="opt-row"><span>Hair</span><div class="swatches" id="optHairStyle"></div></div>
+      <div class="opt-row"><span>Hair colour</span><div class="swatches" id="optHair"></div></div>
+      <div class="opt-row"><span>Facial hair</span><div class="swatches" id="optBeard"></div></div>
+      <div class="opt-row"><span>Shirt</span><div class="swatches" id="optShirt"></div></div>
+      <div class="opt-row"><span>Legs</span><div class="swatches" id="optLegs"></div></div>
+      <div class="opt-row"><span>Boots</span><div class="swatches" id="optBoots"></div></div>
+      <div class="form-err" id="charErr"></div>
+      <button class="stone-btn big" id="btnCharDone">Enter the Realm</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================== LOADING -->
+<div id="screen-load" class="screen" style="display:none">
+  <div class="load-wrap">
+    <h1 class="game-title small">EMBER<span class="numeral">FALL</span></h1>
+    <div class="load-bar"><div id="loadFill"></div></div>
+    <div id="loadText">Waking the world&hellip;</div>
+  </div>
+</div>
+
+<!-- ========================================================== GAME -->
+<div id="screen-game" class="screen" style="display:none">
+  <div id="gameGrid">
+
+    <div id="viewport">
+      <div id="hoverText"></div>
+      <div id="splatLayer"></div>
+      <div id="xpDrop"></div>
+      <div id="teleFlash"></div>
+      <div id="deathOverlay"><div class="parchment death-box">
+        <h2>You have died</h2>
+        <p id="deathText">Your body gives out. Someone will find you.</p>
+        <button class="stone-btn" id="btnRespawn">Wake up</button>
+      </div></div>
+    </div>
+
+    <div id="sidebar">
+      <div id="minimapWrap">
+        <canvas id="minimap" width="168" height="168"></canvas>
+        <div id="compass" title="Face north"></div>
+        <div id="mmZoom"><button data-mz="1">+</button><button data-mz="-1">&minus;</button></div>
+        <div id="regionName"></div>
+        <div id="orbs">
+          <div class="orb" id="orbHp" title="Hitpoints"><span class="orb-fill"></span><b>10</b></div>
+          <div class="orb" id="orbPray" title="Prayer points"><span class="orb-fill"></span><b>1</b></div>
+          <div class="orb" id="orbRun" title="Run energy - click to toggle running"><span class="orb-fill"></span><b>100</b></div>
+        </div>
+      </div>
+
+      <div id="tabRow"></div>
+      <div id="panelBody"></div>
+    </div>
+
+    <div id="chatPanel">
+      <div id="chatTabs">
+        <button class="chat-tab active" data-ch="all">All</button>
+        <button class="chat-tab" data-ch="game">Game</button>
+        <button class="chat-tab" data-ch="public">Public</button>
+        <button class="chat-tab" data-ch="private">Private</button>
+      </div>
+      <div id="chatLog"></div>
+      <div id="chatInputRow">
+        <span id="chatPrefix">Say:</span>
+        <input type="text" id="chatInput" maxlength="140" placeholder="Press Enter to talk...">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- floating windows -->
+  <div id="dialogueBox" class="floating parchment" style="display:none">
+    <div class="dlg-name" id="dlgName"></div>
+    <div class="dlg-text" id="dlgText"></div>
+    <div class="dlg-opts" id="dlgOpts"></div>
+  </div>
+
+  <div id="bankWindow" class="floating window" style="display:none">
+    <div class="win-title">Bank of the Realm <button class="win-close" data-close="bankWindow">&times;</button></div>
+    <div class="win-body">
+      <div class="bank-tools">
+        <input type="text" id="bankSearch" placeholder="Search your account...">
+        <span class="bank-amt">Withdraw:
+          <button class="mini" data-bq="1">1</button>
+          <button class="mini" data-bq="5">5</button>
+          <button class="mini" data-bq="10">10</button>
+          <button class="mini" data-bq="-1">All</button>
+        </span>
+      </div>
+      <div id="bankGrid" class="grid-scroll"></div>
+      <div class="bank-foot">
+        <div id="bankInv" class="inv-grid small"></div>
+        <div class="bank-actions">
+          <button class="stone-btn small" id="btnDepositAll">Deposit pack</button>
+          <div class="hint">Click a pack item to bank it. Right-click for amounts.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="shopWindow" class="floating window" style="display:none">
+    <div class="win-title" id="shopTitle">Shop <button class="win-close" data-close="shopWindow">&times;</button></div>
+    <div class="win-body">
+      <div id="shopGrid" class="grid-scroll"></div>
+      <div class="bank-foot">
+        <div id="shopInv" class="inv-grid small"></div>
+        <div class="bank-actions">
+          <span class="bank-amt">Quantity:
+            <button class="mini" data-sq="1">1</button>
+            <button class="mini" data-sq="5">5</button>
+            <button class="mini" data-sq="10">10</button>
+          </span>
+          <div class="hint">Left-click to buy. Click a pack item to sell.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="makeWindow" class="floating window" style="display:none">
+    <div class="win-title" id="makeTitle">Make <button class="win-close" data-close="makeWindow">&times;</button></div>
+    <div class="win-body"><div id="makeList" class="grid-scroll"></div>
+      <div class="bank-foot"><div class="bank-actions">
+        <span class="bank-amt">Amount:
+          <button class="mini" data-mq="1">1</button>
+          <button class="mini" data-mq="5">5</button>
+          <button class="mini" data-mq="10">10</button>
+          <button class="mini" data-mq="28">All</button>
+        </span>
+      </div></div>
+    </div>
+  </div>
+
+  <div id="tradeWindow" class="floating window" style="display:none">
+    <div class="win-title" id="tradeTitle">Trade <button class="win-close" data-close="tradeWindow">&times;</button></div>
+    <div class="win-body">
+      <div class="trade-cols">
+        <div><div class="trade-head">You offer</div><div id="tradeMine" class="inv-grid small"></div></div>
+        <div><div class="trade-head" id="tradeTheirHead">They offer</div><div id="tradeTheirs" class="inv-grid small"></div></div>
+      </div>
+      <div class="trade-status" id="tradeStatus"></div>
+      <div id="tradeInv" class="inv-grid small"></div>
+      <div class="form-row">
+        <button class="stone-btn small" id="btnTradeAccept">Accept</button>
+        <button class="stone-btn small ghost" id="btnTradeCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="levelUp" class="floating parchment" style="display:none"></div>
+  <div id="ctxMenu" class="ctx" style="display:none"></div>
+  <div id="toast"></div>
+</div>
+
+<script src="js/vendor/three.min.js"></script>
+<script src="js/glb.js?v=414f1400abac"></script>
+<script src="js/assets.js?v=414f1400abac"></script>
+<script src="js/gamedata.js?v=414f1400abac"></script>
+<script src="js/terrain_height.js?v=414f1400abac"></script>
+<script src="js/textures.js?v=414f1400abac"></script>
+<script src="js/models.js?v=414f1400abac"></script>
+<script src="js/terrain.js?v=414f1400abac"></script>
+<script src="js/path.js?v=414f1400abac"></script>
+<script src="js/world.js?v=414f1400abac"></script>
+<script src="js/icons.js?v=414f1400abac"></script>
+<script src="js/audio.js?v=414f1400abac"></script>
+<script src="js/net.js?v=414f1400abac"></script>
+<script src="js/entities.js?v=414f1400abac"></script>
+<script src="js/ui.js?v=414f1400abac"></script>
+<script src="js/game.js?v=414f1400abac"></script>
+
+<div id="v21Crash" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:99999;background:#fff3cd;color:#3a2800;border:3px solid #9b7728;padding:10px;font:13px/1.35 monospace;white-space:pre-wrap;max-height:38vh;overflow:auto"></div>
+<script>
+(function(){var b=document.getElementById('v21Crash');function show(m){b.style.display='block';b.textContent+='\n'+m;} window.addEventListener('error',function(e){show('JS ERROR: '+e.message+' @ '+e.filename+':'+e.lineno);}); window.addEventListener('unhandledrejection',function(e){show('PROMISE ERROR: '+(e.reason&&e.reason.stack||e.reason));});})();
+</script>
+</body>
+</html>

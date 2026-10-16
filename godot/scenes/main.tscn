@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/terrain_mesh.gd" id="2_terrain"]
+[ext_resource type="Script" path="res://scripts/world_builder.gd" id="3_world"]
+[ext_resource type="Script" path="res://scripts/camera_rig.gd" id="4_camera"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
+sky_top_color = Color(0.36, 0.56, 0.82, 1)
+sky_horizon_color = Color(0.76, 0.82, 0.86, 1)
+ground_bottom_color = Color(0.28, 0.3, 0.26, 1)
+ground_horizon_color = Color(0.68, 0.72, 0.66, 1)
+sun_angle_max = 24.0
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMat")
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 2
+ambient_light_color = Color(0.56, 0.60, 0.68, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.80
+tonemap_mode = 0
+tonemap_exposure = 1.0
+fog_enabled = true
+fog_light_color = Color(0.62, 0.70, 0.78, 1)
+fog_density = 0.0012
+fog_sky_affect = 0.0
+
+[sub_resource type="BoxMesh" id="MarkerBarA"]
+size = Vector3(1.1, 0.04, 0.16)
+
+[sub_resource type="BoxMesh" id="MarkerBarB"]
+size = Vector3(0.16, 0.04, 1.1)
+
+[sub_resource type="StandardMaterial3D" id="MarkerMatA"]
+albedo_color = Color(0.9, 0.2, 0.18, 1)
+shading_mode = 0
+no_depth_test = true
+render_priority = 1
+
+[sub_resource type="StandardMaterial3D" id="MarkerMatB"]
+albedo_color = Color(0.9, 0.2, 0.18, 1)
+shading_mode = 0
+no_depth_test = true
+render_priority = 1
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 60, 0)
+light_energy = 1.15
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_max_distance = 120.0
+
+[node name="Terrain" type="Node3D" parent="."]
+script = ExtResource("2_terrain")
+
+[node name="World" type="Node3D" parent="."]
+script = ExtResource("3_world")
+
+[node name="Actors" type="Node3D" parent="."]
+
+[node name="ClickMarker" type="Node3D" parent="."]
+visible = false
+
+[node name="BarA" type="MeshInstance3D" parent="ClickMarker"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+mesh = SubResource("MarkerBarA")
+material_override = SubResource("MarkerMatA")
+
+[node name="BarB" type="MeshInstance3D" parent="ClickMarker"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+mesh = SubResource("MarkerBarB")
+material_override = SubResource("MarkerMatB")
+
+[node name="CameraRig" type="Node3D" parent="."]
+script = ExtResource("4_camera")
+height_offset = 1.1
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 17)
+fov = 62.0
+near = 0.1
+far = 900.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Status" type="Label" parent="UI"]
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 1270.0
+offset_bottom = 32.0
+text = "Starting..."
+
+[node name="Hover" type="Label" parent="UI"]
+offset_left = 10.0
+offset_top = 34.0
+offset_right = 1270.0
+offset_bottom = 58.0
